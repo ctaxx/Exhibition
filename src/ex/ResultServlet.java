@@ -23,31 +23,28 @@ public class ResultServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String userName = request.getParameter("name");
 		String password = request.getParameter("password");
-
-		ServletOutputStream out = response.getOutputStream();
+		
 		DBUtils dbUtils = new DBUtils();
 		String valueFromDB = dbUtils.getUser();
 		
-		out.println("<html>");
-		out.println("<head><title>Result Servlet</title></head>");
-
-		out.println("<body>");
-		out.println("<h3>Result Servlet</h3>");
-		out.println("This is test Servlet");
-		out.println("<br>");
-		out.println(userName);
-		out.println("<br>");
-		out.println(password);
-		out.println("<br>");
-		out.println("<br>");
-		out.println("value has been got from the database:");
-		out.println("<br>");
-		out.println(valueFromDB);
-		out.println("</body>");
-		out.println("<html>");
-
-		
-		
+		response.getWriter()
+		.append("<html>")
+		.append("<head><title>Result Servlet</title></head>")
+		.append("<body>")
+		.append("<h3>Result Servlet</h3>")
+		.append("This is test Servlet")
+		.append("<br>")
+		.append(userName)
+		.append("<br>")
+		.append(password)
+		.append("<br>")
+		.append("<br>")
+		.append("value has been got from the database:")
+		.append("<br>")
+		.append(valueFromDB)
+		.append("</body>")
+		.append("<html>");
+				
 	}
 
 	@Override

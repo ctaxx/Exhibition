@@ -11,30 +11,43 @@ import javax.servlet.http.HttpServletResponse;
 
 
 //@WebServlet("/hello")
-public class HelloServlet extends HttpServlet {
+public class ResultServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	public HelloServlet() {
+	public ResultServlet() {
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String userName = request.getParameter("name");
+		String password = request.getParameter("password");
 
 		ServletOutputStream out = response.getOutputStream();
-
+		DBUtils dbUtils = new DBUtils();
+		String valueFromDB = dbUtils.getUser();
+		
 		out.println("<html>");
-		out.println("<head><title>Hello Servlet</title></head>");
+		out.println("<head><title>Result Servlet</title></head>");
 
 		out.println("<body>");
-		out.println("<h3>Hello World</h3>");
-		out.println("This is my first Servlet");
+		out.println("<h3>Result Servlet</h3>");
+		out.println("This is test Servlet");
+		out.println("<br>");
+		out.println(userName);
+		out.println("<br>");
+		out.println(password);
+		out.println("<br>");
+		out.println("<br>");
+		out.println("value has been got from the database:");
+		out.println("<br>");
+		out.println(valueFromDB);
 		out.println("</body>");
 		out.println("<html>");
 
-		DBUtils dbUtils = new DBUtils();
-		dbUtils.connect();
+		
+		
 	}
 
 	@Override

@@ -5,17 +5,17 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>Exhibition</display-name>
 
-	<!-- Define servlet, named helloServlet -->
+	<!-- Define servlet, named helloServlet 
 	<servlet>
 		<servlet-name>resultServlet</servlet-name>
 		<servlet-class>ex.ResultServlet</servlet-class>
-	</servlet>
+	</servlet>-->
 
-	<!-- Defines the path to access this Servlet -->
+	<!-- Defines the path to access this Servlet 
 	<servlet-mapping>
 		<servlet-name>resultServlet</servlet-name>
 		<url-pattern>/getInfo</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping>-->
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

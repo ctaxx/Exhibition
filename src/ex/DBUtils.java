@@ -14,9 +14,7 @@ public class DBUtils {
 		String resultString = null;
 		try {
 			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-			Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exhibitions" + "?useUnicode=true"
-					+ "&serverTimezone=UTC" + "&useSSL=true" + "&verifyServerCertificate=false", "root", "Gfhjkm1_");
-//			Connection cn = ConnectorDB.getConnection();
+			Connection cn = ConnectorDB.getConnection();
 			Statement st = cn.createStatement();
 			ResultSet rs = null;
 			rs = st.executeQuery("SELECT name FROM user;");

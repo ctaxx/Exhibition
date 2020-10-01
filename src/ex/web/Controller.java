@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import ex.db.DBUtils;
 
 
-@WebServlet("/getInfo")
-public class ResultServlet extends HttpServlet {
+@WebServlet("/Controller")
+public class Controller extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	public ResultServlet() {
+	public Controller() {
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package ex.web.command;
+package com.ex.web.command;
 
 import java.util.Map;
 import java.util.TreeMap;

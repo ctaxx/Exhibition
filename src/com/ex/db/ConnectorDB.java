@@ -1,4 +1,4 @@
-package ex.db;
+package com.ex.db;
 
 import java.sql.*;
 import java.util.ResourceBundle;

@@ -1,4 +1,4 @@
-package ex.web.command;
+package com.ex.web.command;
 
 public class CancelBookingCommand implements Command{
 

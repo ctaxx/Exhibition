@@ -1,4 +1,4 @@
-package ex.web;
+package com.ex.web;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ex.db.DBUtils;
+import com.ex.db.DBUtils;
 
 
 @WebServlet("/Controller")

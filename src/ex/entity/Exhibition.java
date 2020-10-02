@@ -1,6 +1,12 @@
 package ex.entity;
 
-public class Exhibition {
+import java.io.Serializable;
+
+public class Exhibition implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private String subject;
 	private java.util.Date startDate;

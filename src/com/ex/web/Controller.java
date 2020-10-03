@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ex.db.DBUtils;
 
 
-@WebServlet("/Controller")
+@WebServlet("/")
 public class Controller extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

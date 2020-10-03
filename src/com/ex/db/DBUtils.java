@@ -13,8 +13,11 @@ public class DBUtils {
 		logger.info("dbUtils started");
 		String resultString = null;
 		try {
-			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-			Connection cn = ConnectorDB.getConnection();
+		//	DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+		//	Connection cn = ConnectorDB.getConnection();
+			
+			Connection cn = ConnectionPool.getInstance().getConnection();
+			
 			Statement st = cn.createStatement();
 			ResultSet rs = null;
 			rs = st.executeQuery("SELECT name FROM user;");

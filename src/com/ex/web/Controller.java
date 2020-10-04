@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ex.db.DBUtils;
+import com.ex.web.command.Command;
+import com.ex.web.command.CommandContainer;
 
-
-@WebServlet("/")
+@WebServlet("/Controller")
 public class Controller extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -22,30 +22,35 @@ public class Controller extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String userName = request.getParameter("name");
-		String password = request.getParameter("password");
-		
-		DBUtils dbUtils = new DBUtils();
-		String valueFromDB = dbUtils.getUser();
-		
-		response.getWriter()
-		.append("<html>")
-		.append("<head><title>Result Servlet</title></head>")
-		.append("<body>")
-		.append("<h3>Result Servlet</h3>")
-		.append("This is test Servlet")
-		.append("<br>")
-		.append(userName)
-		.append("<br>")
-		.append(password)
-		.append("<br>")
-		.append("<br>")
-		.append("value has been got from the database:")
-		.append("<br>")
-		.append(valueFromDB)
-		.append("</body>")
-		.append("<html>");
-				
+
+		String commandType = request.getParameter("command");
+		Command command = CommandContainer.get(commandType);
+
+		String forward = "";
+
+		forward = command.execute(request, response);
+
+		request.getRequestDispatcher(forward).forward(request, response);
+
+//		DBUtils dbUtils = new DBUtils();
+//		String valueFromDB = dbUtils.getUser();
+//		
+//		response.getWriter()
+//		.append("<html>")
+//		.append("<head><title>Result Servlet</title></head>")
+//		.append("<body>")
+//		.append("<h3>Result Servlet</h3>")
+//		.append("This is test Servlet")
+//		.append("<br>")
+//		.append(commandType)
+//		.append("<br>")
+//		.append("<br>")
+//		.append("value has been got from the database:")
+//		.append("<br>")
+//		.append(valueFromDB)
+//		.append("</body>")
+//		.append("<html>");
+
 	}
 
 	@Override

@@ -2,8 +2,11 @@ package com.ex.web.command;
 
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.logging.Logger;
 
 public class CommandContainer {
+	
+	static Logger logger = Logger.getLogger(CommandContainer.class.getName());
 
 	private static Map<String, Command> commands = new TreeMap<String, Command>();
 	
@@ -25,6 +28,7 @@ public class CommandContainer {
 	}
 	
 	public static Command get(String commandName) {
+		logger.info("CommandContainer get command: " + commandName);
 		if (commandName == null || !commands.containsKey(commandName)) {
 			return commands.get("noCommand"); 
 		}

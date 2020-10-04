@@ -1,10 +1,15 @@
 package com.ex.web.command;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 public class CancelExCommand implements Command{
 
 	@Override
-	public void execute() {
-		
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		return null;
 	}
+
+	
 
 }

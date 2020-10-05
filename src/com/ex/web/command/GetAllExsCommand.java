@@ -1,7 +1,10 @@
 package com.ex.web.command;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.ex.entity.*;
 
 import com.ex.db.DBUtils;
 
@@ -11,12 +14,10 @@ public class GetAllExsCommand implements Command{
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		DBUtils dbUtils = new DBUtils();
-		String valueFromDB = dbUtils.getExs();
+		List<Exhibition> valueFromDB = dbUtils.getExs();
 		
-		request.setAttribute("value", valueFromDB);
+		request.setAttribute("values", valueFromDB);
 		
 		return "mainPage.jsp";
 	}
-
-
 }

@@ -5,6 +5,7 @@
 <title>MainPage</title>
 </head>
 <body>
+	<jsp:include page="/jsp/header.jsp"></jsp:include>
 	main page here
 	<table>
 		<c:forEach items="${values}" var="element">
@@ -12,5 +13,6 @@
 				<td>${element.name}</td>
 		</c:forEach>
 	</table>
+	<jsp:include page="/jsp/footer.jsp"></jsp:include>
 </body>
 </html>

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.ex.entity.*;
+import com.ex.Path;
 
 import com.ex.db.DBUtils;
 
@@ -18,6 +19,6 @@ public class GetAllExsCommand implements Command{
 		
 		request.setAttribute("values", valueFromDB);
 		
-		return "mainPage.jsp";
+		return Path.MAIN_PAGE;
 	}
 }

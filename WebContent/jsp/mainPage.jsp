@@ -5,7 +5,7 @@
 <title>MainPage</title>
 </head>
 <body>
-	<jsp:include page="/jsp/header.jsp"></jsp:include>
+	<%@ include file="/jsp/header.jsp" %>
 	main page here
 	<table>
 		<c:forEach items="${values}" var="element">
